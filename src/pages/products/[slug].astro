@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const products = await fetchProducts();
-const product = products.find((product) => product.slug === slug);
+const product = products.find((product: any) => product.slug === slug);
 const { title, description, price, images } = product;
 console.log(slug, images);
 const details = description.split(",");
